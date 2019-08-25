@@ -17,8 +17,8 @@ class Node:
         self.depthFirstSearchHelperStack(self, array)
         return array
 
-    # T: O(N)
-    # S: O(N) with stack overflow possibility
+    # T: O(V+E)
+    # S: O(V) with stack overflow possibility
     def depthFirstSearchHelperRecursive(self, node, array):
         if node is None:
             return
@@ -28,8 +28,8 @@ class Node:
         for child in node.children:
             self.depthFirstSearchHelper(child, array)
 
-    # T: O(N)
-    # S: O(N) without stack overflow possibility
+    # T: O(V)
+    # S: O(V) without stack overflow possibility
     def depthFirstSearchHelperStack(self, node, array):
         stack = []
         stack.append(node)
