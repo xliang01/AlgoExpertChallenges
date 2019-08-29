@@ -16,7 +16,7 @@ class DoublyLinkedList:
         self.remove(node)
         self.insertBefore(self.head, node)
         self.head = node
-        self.setDefaultTail()
+        # self.setDefaultTail()
 
     def setTail(self, node):
         if node == self.tail:
@@ -107,16 +107,12 @@ class DoublyLinkedList:
 # Init Data
 list = DoublyLinkedList()
 head = Node(1)
-curr = head
-prev = None
+list.setHead(head)
+list.setTail(head)
 
 for index in range(2, 6):
-    prev = curr
-    curr.next = Node(index)
-    curr = curr.next
-    curr.prev = prev
+    list.insertAfter(list.tail, Node(index))
 
-list.setHead(head)
 print("Sample Input")
 list.print()
 
